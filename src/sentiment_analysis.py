@@ -58,9 +58,9 @@ def process_excel(input_file, comment_column, output_file=None):
 
 if __name__ == "__main__":
     # 使用示例
-    input_file = "D:/下载new/出国申请材料/12-AI论文/处理后的评论汇总2.xlsx"  # 输入文件名
+    input_file = "../处理后的评论汇总.xlsx"  # 输入文件名
     comment_column = "评论内容"    # 评论列的列名
-    output_file = "comments_with_sentiment2.xlsx"  # 输出文件名
+    output_file = "comments_with_sentiment.xlsx"  # 输出文件名
     
     result = process_excel(input_file, comment_column, output_file)
     

@@ -1,14 +1,25 @@
 import os
 import yaml
+from pathlib import Path
 from src.extract_comments import process_folder
 from src.process_comments import process_comments_data
 from src.sentiment_analysis import process_excel
 from src.sentiment_analysis_compare import compare_models
 
 def load_config():
-    """加载配置文件"""
+    """加载配置文件并处理路径"""
+    # 获取项目根目录
+    project_root = Path(__file__).parent
+    
+    # 读取配置文件
     with open('config/config.yaml', 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+        config = yaml.safe_load(f)
+    
+    # 如果是相对路径，则转换为绝对路径
+    if config['input_folder'].startswith('./'):
+        config['input_folder'] = str(project_root / config['input_folder'].lstrip('./'))
+    
+    return config
 
 def main():
     """主程序入口"""
@@ -32,7 +43,8 @@ def main():
     print("\n[步骤2] 处理评论数据...")
     processed_df = process_comments_data(
         raw_comments_file,
-        config['processed_comments_file']
+        config['processed_comments_file'],
+        config['ip_address_file']
     )
     if processed_df is None:
         print("评论处理失败，程序终止")

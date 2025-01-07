@@ -1,8 +1,9 @@
 # 输入输出路径配置
-input_folder: "D:/下载new/出国申请材料/12-AI论文/数据采集"
-raw_comments_file: "所有评论汇总.xlsx"
-processed_comments_file: "添加属性列.xlsx"
-sentiment_output_file: "情感分析结果.xlsx"
+input_folder: "./数据采集"  # 当前数据存储在项目根目录下的"数据采集"文件夹中。可以自行修改为数据所在文件夹的绝对路径
+raw_comments_file: "所有评论汇总.xlsx"  # 汇总所有原始评论数据的文件名
+processed_comments_file: "添加属性列.xlsx"  # 添加属性列后的评论数据文件名
+sentiment_output_file: "情感分析结果.xlsx"  # 情感分析结果文件名
+ip_address_file: "标注IP地址的评论汇总.xlsx"  # 标注IP地址后的评论数据文件名  补充说明：这个文件内容是手动核对用户IP标注的，存储在数据采集文件夹下的内容，缺失部分IP地址信息
 
 # 模型对比配置
 run_model_comparison: false  # 是否运行模型对比，配置为false时，不运行模型对比；配置为true时，运行模型对比

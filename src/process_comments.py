@@ -225,7 +225,7 @@ def add_comment_length(df):
     return df
 
 
-def add_ip_address(df):
+def add_ip_address(df, ip_address_file):
     """
     从IP地址文件读取信息并拼接到原始数据框
     
@@ -237,7 +237,7 @@ def add_ip_address(df):
     """
     try:
         # 读取IP地址文件
-        ip_df = pd.read_excel("标注IP地址的评论汇总.xlsx")
+        ip_df = pd.read_excel(ip_address_file)
         
         # 确保两个数据框有相同的长度用于合并
         if len(df) != len(ip_df):
@@ -290,7 +290,7 @@ def add_local_comment_flag(df):
     return df
 
 
-def process_comments_data(input_file, output_file):
+def process_comments_data(input_file, output_file, ip_address_file):
     """
     处理评论汇总文件，添加新的属性列
     
@@ -315,7 +315,7 @@ def process_comments_data(input_file, output_file):
         df = add_spot_type_id(df)  # 景区类型ID映射
         
         # 3. 拼接缓存好的IP地址
-        df = add_ip_address(df)
+        df = add_ip_address(df, ip_address_file)
 
         # 4. 处理其他属性列
         df = add_ai_generated_flag(df)  # 是否AI生成标记
@@ -339,7 +339,7 @@ def process_comments_data(input_file, output_file):
 
 if __name__ == "__main__":
     raw_comments_file = "所有评论汇总.xlsx"
-    processed_comments_file = "处理后的评论汇总2.xlsx"
+    processed_comments_file = "处理后的评论汇总.xlsx"
     processed_df = process_comments_data(raw_comments_file, processed_comments_file)
     print(f"处理后的评论汇总已保存至：{processed_comments_file}")
 

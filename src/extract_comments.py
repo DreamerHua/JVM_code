@@ -172,7 +172,7 @@ def process_folder(folder_path):
 
 if __name__ == "__main__":
     # 使用示例
-    folder_path = "D:\\下载new\\出国申请材料\\12-AI论文\\数据采集"  # 替换为你的文件夹路径
+    folder_path = "./../数据采集"  # 替换为你的文件夹路径
     
     # 处理文件夹中的所有Excel文件
     combined_comments = process_folder(folder_path)
