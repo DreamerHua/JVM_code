@@ -1,6 +1,8 @@
-# 主要功能：处理评论汇总文件，添加新的属性列
-# 输入：汇总的评论文件，文件格式为xlsx。该文件放置在代码所在目录下
-# 输出：处理后的评论汇总文件，文件格式为xlsx。输出位置为代码所在目录下
+"""
+主要功能：处理评论汇总文件，添加新的属性列
+输入：汇总的评论文件，文件格式为xlsx。该文件放置在代码所在目录下
+输出：处理后的评论汇总文件，文件格式为xlsx。输出位置为代码所在目录下
+"""
 
 import re
 import pandas as pd
@@ -88,7 +90,7 @@ def get_video_metadata():
             '宣传片内容': (视频发布时间, 视频链接, 景区所在地, 景区类型)
         }
     """
-    # TODO:手动输入视频元数据信息。
+    # 手动输入视频元数据信息。
     metadata = {
         '《HYPER AI》小红书个体号-云南风光-AI生成': ('2024-03-29', 'https://www.xiaohongshu.com/explore/660675a0000000001a00e578?xsec_token=AB2Rkh2xSAGzwL8AZ_qY-sLKDLPCrvIQuD9iK-ECWXBcU=&xsec_source=pc_user', '云南', '自然景观'),
         '《Longhoo文旅》城市宣传号-南京风光-AI生成': ('2024-04-10', 'https://www.xiaohongshu.com/explore/6616477b000000001b008dd8?xsec_token=ABakRUPmIxE7OCKpxF7ErQ4jlVuSe64aFtPi6j2SYmyMA=&xsec_source=pc_search&source=web_search_result_notes', '江苏', '自然景观'),

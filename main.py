@@ -21,6 +21,7 @@ def load_config():
     
     return config
 
+
 def main():
     """主程序入口"""
     # 加载配置
@@ -68,6 +69,7 @@ def main():
         )
     
     print("\n=== 所有处理完成 ===")
+
 
 if __name__ == "__main__":
     main() 

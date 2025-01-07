@@ -1,7 +1,8 @@
-# extract_comments.py
-# 文件功能：提取excel文件中的评论，并输出评论内容、一级评论ID/评论类型和宣传片内容
-# 作者：huasheng
-# 日期：2025-01-04
+"""
+文件功能：提取excel文件中的评论，并输出评论内容、一级评论ID/评论类型和宣传片内容
+作者：huasheng
+日期：2025-01-04
+"""
 
 import pandas as pd
 import os

@@ -1,7 +1,8 @@
-# sentiment_analysis.py
-# 文件功能：对excel中的评论进行情感分析，并输出情感得分
-# 作者：huasheng
-# 日期：2025-01-04
+"""
+文件功能：对excel中的评论进行情感分析，并输出情感得分
+作者：huasheng
+日期：2025-01-04
+"""
 
 import pandas as pd
 from snownlp import SnowNLP
