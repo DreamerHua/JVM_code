@@ -1,0 +1,12 @@
+# 输入输出路径配置
+input_folder: "D:/下载new/出国申请材料/12-AI论文/数据采集"
+raw_comments_file: "所有评论汇总.xlsx"
+processed_comments_file: "添加属性列.xlsx"
+sentiment_output_file: "情感分析结果.xlsx"
+
+# 模型对比配置
+run_model_comparison: false  # 是否运行模型对比，配置为false时，不运行模型对比；配置为true时，运行模型对比
+comparison_sample_size: 100  # 模型对比时，每个模型抽取的样本数量
+
+# 其他配置参数
+comment_column: "评论内容"  # 评论数据所在的列名
